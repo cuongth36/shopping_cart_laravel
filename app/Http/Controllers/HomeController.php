@@ -31,7 +31,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $list_sliders= Slider::groupBy('id')->get();
+        // $list_sliders= Slider::groupBy('id')->get();
         $products = Product::where('status', '=', '1')->take(5)->get();
         $category_product = ProductCategories::with('product')->take(3)->get();
         $post_category = CategoryPost::take(3)->get();
@@ -39,7 +39,7 @@ class HomeController extends Controller
         // $laptop_category = ProductCategories::find(17)->product->take(5);
         // $tablet_category = ProductCategories::find(16)->product->take(5);
         $product_seller = DB::select("SELECT  *, SUM(qty) AS quantity FROM `order_details` inner JOIN products on order_details.product_id = products.id  GROUP by product_id ORDER BY quantity DESC");
-        return view ('pages.homepage.home', compact('list_sliders', 'products', 'category_product', 'post',  'product_seller'));
+        return view ('pages.homepage.home', compact( 'products', 'category_product', 'post',  'product_seller'));
     }
 
     function search(Request $request){

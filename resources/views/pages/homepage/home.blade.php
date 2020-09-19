@@ -4,7 +4,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="slider-wrapper">
-      <div class="slider-item owl-carousel owl-theme">
+      {{-- <div class="slider-item owl-carousel owl-theme">
         @foreach ($list_sliders as $slider)
             <div class="item">
                 <div class="thumbnail">
@@ -14,7 +14,7 @@
                 </div>
             </div>
         @endforeach
-      </div>
+      </div> --}}
     </div>
   </div>
 </div>
